@@ -1,4 +1,4 @@
-const ytdlDiscord = require("ytdl-core-discord");
+const ytdlDiscord = require("discord-ytdl-core");
 
 module.exports.play = async(song, client, message) => {
     const queue = client.queue.get(message.guild.id);

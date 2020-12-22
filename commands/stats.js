@@ -10,8 +10,7 @@ module.exports = {
     let lup;
     const mbed = new MessageEmbed()
     .setTitle(`${client.user.username} music stats`)
-    .setFooter("© Client Developer 2020")
-    .setColor("RANDOM")
+    .setColor("YELLOW")
     .addField("Uptime", uptime)
     if (!serverQueue) return message.channel.send(mbed).catch(console.error);
     if(serverQueue.playing === true) status = "Playing"

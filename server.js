@@ -1,10 +1,3 @@
-/*                                                             Client Developer Music Bot Example
-                                                         1. Put Bot Token and Youtube API Key in .env file
-                                                           2. Put Prefix and Your User ID in config.json
-                                                                          3. Modify It!
-                                                     
-           © Not A 開発者 2020 | Please, do not use our project as a commercial project. Instead, you can contribute on writing it. Also, please do not remove the credit                        */
-
 const discord = require("discord.js");
 const client = new discord.Client({disableMentions:"everyone"})
 const db = new Map()
@@ -55,7 +48,7 @@ client.on('message', msg => {
   if(msg.content == `<@${client.user.id}>`){
     const embed = new discord.MessageEmbed()
     .setDescription(`:wave: | My prefix is ${prefix}`)
-    .setColor("RANDOM")
+    .setColor("YELLOW")
     .setFooter("© Not A 開発者 2020")
     msg.channel.send(embed)
   }
