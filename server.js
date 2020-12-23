@@ -12,6 +12,19 @@ app.get("/", (request, response) => {
 })
 app.listen(process.env.PORT);
 
+client.on("ready", async () => {
+  console.log(`${client.user.tag} Boy ready to use`);
+
+  const status = [
+    `n- help`,
+    `${client.users.cache.size} Users`, //gunanya untuk count user
+    `${client.guilds.cache.size} Servers` //gunanya untuk count server yang dimasuki oleh bot
+    ]
+  setInterval(() => {
+    client.user.setActivity(status[Math.floor(Math.random() * status.length)], {type : "LISTENING"}) //watching bisa kalian ganti sama playing dan semacamnya
+  }, 5000)
+});
+
 const { prefix } = require("./config.json")
 client.aliases = new discord.Collection();
 client.commands = new discord.Collection();
@@ -23,11 +36,6 @@ client.hastebin = async(text) => {
   return `https://bin-clientdev.glitch.me/${body.key}`
 }
 
-//event
-client.on('ready', () => {
-  console.log(`${client.user.tag} ready to serving ${client.guilds.cache.size} guild(s) and ${client.users.cache.size} user(s), with ${client.commands.size} command(s) total!`)
-  client.user.setActivity("MAINTENANCE", {type:"LISTENING"})
-});
 
 const commandFile = fs.readdirSync("./commands").filter(file => file.endsWith(".js"));
 commandFile.forEach(file => {
