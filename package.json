@@ -30,7 +30,8 @@
     "bindings": "^1.5.0",
     "pretty-ms": "^7.0.1",
     "discord-ytdl-core": "^5.0.0",
-    "lyrics-finder": "^21.4.0"
+    "lyrics-finder": "^21.4.0",
+    "string-progressbar": "^1.0.1"
   },
   "engines": {
     "node": "12.x"

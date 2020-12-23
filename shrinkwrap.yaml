@@ -13,11 +13,13 @@ dependencies:
   genius-api: github.com/jahrlin/genius-api/82ba446951a9f30cf2823e57b1e2091aa76a7ea0
   http: 0.0.0
   libsodium: 0.7.8
+  lyrics-finder: 21.4.0
   node-opus: 0.3.3
   node-superfetch: 0.1.10
   pretty-ms: 7.0.1
   simple-youtube-api: 5.2.1
   sodium: 3.0.2
+  string-progressbar: 1.0.1
   utf-8-validate: 5.0.3
   ytdl-core: 4.2.1
   ytdl-core-discord: 1.2.4
@@ -492,6 +494,12 @@ packages:
       node: '>= 0.8'
     resolution:
       integrity: sha1-rT/0yG7C0CkyL1oCw6mmBslbP1k=
+  /encoding/0.1.13:
+    dependencies:
+      iconv-lite: 0.6.2
+    dev: false
+    resolution:
+      integrity: sha512-ETBauow1T35Y/WZMkio9jiM0Z5xjHHmJ4XmjZOq1l/dXz3lr2sRn87nJy20RupqSh1F2m3HHPSp8ShIPQJrJ3A==
   /entities/1.1.2:
     dev: false
     resolution:
@@ -729,10 +737,27 @@ packages:
     dev: false
     resolution:
       integrity: sha1-4Ob+aijPUROIVeCG0Wkedx3iqLk=
+  /he/1.2.0:
+    dev: false
+    hasBin: true
+    resolution:
+      integrity: sha512-F/1DnUGPopORZi0ni+CvrCgHQ5FyEAHRLSApuYWMmrbSwoN2Mn/7k+Gl38gJnR7yyDZk6WLXwiGod1JOWNDKGw==
   /html-entities/1.4.0:
     dev: false
     resolution:
       integrity: sha512-8nxjcBcd8wovbeKx7h3wTji4e6+rhaVuPNpMqwWgnHh+N9ToqsCs6XztWRBPQ+UtzsoMAdKZtUENoVzU/EMtZA==
+  /html-to-text/5.1.1:
+    dependencies:
+      he: 1.2.0
+      htmlparser2: 3.10.1
+      lodash: 4.17.20
+      minimist: 1.2.5
+    dev: false
+    engines:
+      node: '>= 4.0.0'
+    hasBin: true
+    resolution:
+      integrity: sha512-Bci6bD/JIfZSvG4s0gW/9mMKwBRoe/1RWLxUME/d6WUSZCdY7T60bssf/jFf7EYXRyqU4P5xdClVqiYU0/ypdA==
   /htmlparser2/3.10.1:
     dependencies:
       domelementtype: 1.3.1
@@ -806,6 +831,14 @@ packages:
       node: '>=0.10.0'
     resolution:
       integrity: sha512-v3MXnZAcvnywkTUEZomIActle7RXXeedOR31wwl7VlyoXO4Qi9arvSenNQWne1TcRwhCL1HwLI21bEqdpj8/rA==
+  /iconv-lite/0.6.2:
+    dependencies:
+      safer-buffer: 2.1.2
+    dev: false
+    engines:
+      node: '>=0.10.0'
+    resolution:
+      integrity: sha512-2y91h5OpQlolefMPmUlivelittSWy0rP+oYVpn6A7GwVHNE8AWzoYOBNmlwks3LobaJxgHCYZAnyNo2GgpNRNQ==
   /ignore-walk/3.0.3:
     dependencies:
       minimatch: 3.0.4
@@ -950,6 +983,10 @@ packages:
     dev: false
     resolution:
       integrity: sha1-W/Rejkm6QYnhfUgnid/RW9FAt7Y=
+  /lodash/4.17.20:
+    dev: false
+    resolution:
+      integrity: sha512-PlhdFcillOINfeV7Ni6oF1TAEayyZBoZ8bcshTHqOYJYlrqzRK5hagpagky5o4HfCzzd1TRkXPMFq6cKk9rGmA==
   /lru-cache/6.0.0:
     dependencies:
       yallist: 4.0.0
@@ -958,6 +995,15 @@ packages:
       node: '>=10'
     resolution:
       integrity: sha512-Jo6dJ04CmSjuznwJSS3pUeWmd/H0ffTlkXXgwZi+eq1UCmqQwCh+eLsYOYCwY991i2Fah4h1BEMCx4qThGbsiA==
+  /lyrics-finder/21.4.0:
+    dependencies:
+      encoding: 0.1.13
+      html-to-text: 5.1.1
+      node-fetch: 2.6.1
+    dev: false
+    hasBin: true
+    resolution:
+      integrity: sha512-S9vTKX8CSPjZwAaCQ+UVkzrM6pHdAZgp+0SpWSVqtYcHWF2qoLp3CnzHNlSdIBxP97Oh2uRuVGbbfTqtbtRBLQ==
   /m3u8stream/0.7.1:
     dependencies:
       miniget: 1.7.2
@@ -1554,6 +1600,10 @@ packages:
       node: '>= 0.6'
     resolution:
       integrity: sha1-Fhx9rBd2Wf2YEfQ3cfqZOBR4Yow=
+  /string-progressbar/1.0.1:
+    dev: false
+    resolution:
+      integrity: sha512-smY1/o7XCBHeYtb1XS4sMSv3L3leToTNasPPxrjJq71BCxVX3u1rII+UDQEmUN/dnQbmjTj1xJiN+3xtjq8Esg==
   /string-width/1.0.2:
     dependencies:
       code-point-at: 1.1.0
@@ -1799,11 +1849,13 @@ specifiers:
   genius-api: 'github:jahrlin/genius-api'
   http: ^0.0.0
   libsodium: ^0.7.8
+  lyrics-finder: ^21.4.0
   node-opus: ^0.3.3
   node-superfetch: ^0.1.10
   pretty-ms: ^7.0.1
   simple-youtube-api: ^5.2.1
   sodium: ^3.0.2
+  string-progressbar: ^1.0.1
   utf-8-validate: ^5.0.2
   ytdl-core: ^4.2.1
   ytdl-core-discord: ^1.2.4
