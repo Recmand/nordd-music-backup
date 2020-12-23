@@ -13,7 +13,7 @@ app.get("/", (request, response) => {
 app.listen(process.env.PORT);
 
 client.on("ready", async () => {
-  console.log(`${client.user.tag} Boy ready to use`);
+  console.log(`${client.user.tag} Bot ready to use`);
 
   const status = [
     `n- help`,
