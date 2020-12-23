@@ -1,16 +1,27 @@
-const discord = require("discord.js")
+const { MessageEmbed } = require("discord.js");
+
 module.exports = {
   name: "help",
-  alias:["h","?","commandlist","cmd","cmdlist"],
-  description: "Show list of bot's commands",
-  run: async(client, msg, args) => {
-     const helpembed = new discord.MessageEmbed()
-     .setTitle(client.user.username + " Command List")
-     .setDescription(`The number one project of Client Developer`)
-     client.commands.map(cmd =>{
-       helpembed.addField(`${cmd.name} (${cmd.alias})`, cmd.description)
-     })
-     helpembed.setColor("YELLOW")
-     msg.channel.send(helpembed);
+  aliases: ["h","?","cmd",],
+  description: "Display all commands and descriptions",
+  execute(message) {
+    let commands = message.client.commands.array();
+
+    let helpEmbed = new MessageEmbed()
+      .setTitle(`${message.client.user.username} Help`)
+      .setDescription("Commands list")
+      .setColor("YELLOW");
+
+    commands.forEach((cmd) => {
+      helpEmbed.addField(
+        `**${message.client.prefix}${cmd.name} ${cmd.aliases ? `(${cmd.aliases})` : ""}**`,
+        `${cmd.description}`,
+        true
+      );
+    });
+
+    helpEmbed.setTimestamp();
+
+    return message.channel.send(helpEmbed).catch(console.error);
   }
-}
+};

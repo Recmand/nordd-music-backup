@@ -29,7 +29,8 @@
     "fs": "^0.0.2",
     "bindings": "^1.5.0",
     "pretty-ms": "^7.0.1",
-    "discord-ytdl-core": "^5.0.0"
+    "discord-ytdl-core": "^5.0.0",
+    "lyrics-finder": "^21.4.0"
   },
   "engines": {
     "node": "12.x"
