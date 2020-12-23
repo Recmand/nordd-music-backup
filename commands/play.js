@@ -58,7 +58,7 @@ module.exports = {
       } else {
       try {
         const results = await youtube.searchVideos(search, 1);
-        songInfo = await ytdl.getInfo(results[1].url);
+        songInfo = await ytdl.getInfo(results[0].url);
         song = {
           title: songInfo.videoDetails.title,
           channel:songInfo.videoDetails.author.name,
