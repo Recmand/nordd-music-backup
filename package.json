@@ -31,7 +31,8 @@
     "pretty-ms": "^7.0.1",
     "discord-ytdl-core": "^5.0.0",
     "lyrics-finder": "^21.4.0",
-    "string-progressbar": "^1.0.1"
+    "string-progressbar": "^1.0.1",
+    "novelcovid": "^3.0.0"
   },
   "engines": {
     "node": "12.x"

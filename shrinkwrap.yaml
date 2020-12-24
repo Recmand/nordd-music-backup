@@ -16,6 +16,7 @@ dependencies:
   lyrics-finder: 21.4.0
   node-opus: 0.3.3
   node-superfetch: 0.1.10
+  novelcovid: 3.0.0
   pretty-ms: 7.0.1
   simple-youtube-api: 5.2.1
   sodium: 3.0.2
@@ -25,6 +26,10 @@ dependencies:
   ytdl-core-discord: 1.2.4
   zlib-sync: 0.1.7
 packages:
+  /@aero/centra/1.0.6:
+    dev: false
+    resolution:
+      integrity: sha512-e7sUh/VjugT8LsHb4/hcbmhaVVi9deWWPQnlMnU0RAnF8+iCdGdCcKvoHnDNl/ELykwjpbKpBYbWPx0yKZaDpw==
   /@derhuerst/http-basic/8.2.1:
     dependencies:
       caseless: 0.12.0
@@ -1212,6 +1217,12 @@ packages:
     hasBin: true
     resolution:
       integrity: sha512-CvaGwVMztSMJLOeXPrez7fyfObdZqNUK1cPAEzLHrTybIua9pMdmmPR5YwtfNftIOMv3DPUhFaxsZMNTQO20Kg==
+  /novelcovid/3.0.0:
+    dependencies:
+      '@aero/centra': 1.0.6
+    dev: false
+    resolution:
+      integrity: sha512-70LZiuOY52f3uIrcZ5dP1F0LFkbz8GuGRuiC/e+YjGv/jYrbq8WXll67GaCafWCvznFmgSEgDJcztDoXz4m+kg==
   /npm-bundled/1.1.1:
     dependencies:
       npm-normalize-package-bin: 1.0.1
@@ -1852,6 +1863,7 @@ specifiers:
   lyrics-finder: ^21.4.0
   node-opus: ^0.3.3
   node-superfetch: ^0.1.10
+  novelcovid: ^3.0.0
   pretty-ms: ^7.0.1
   simple-youtube-api: ^5.2.1
   sodium: ^3.0.2
