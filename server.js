@@ -16,7 +16,7 @@ client.on("ready", async () => {
   console.log(`${client.user.tag} Bot ready to use`);
 
   const status = [
-    `n- help`,
+    `Maintenance`,
     `${client.users.cache.size} Users`, //gunanya untuk count user
     `${client.guilds.cache.size} Servers` //gunanya untuk count server yang dimasuki oleh bot
     ]
