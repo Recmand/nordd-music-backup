@@ -26,15 +26,7 @@ client.on("ready", async () => {
 });
 
 client.on('guildCreate', guild => {
-  guild.systemChannel.send
-  
-  let embed = new discord.MessageEmbed()
-  .setTitle("Hello, I'm Nordd bot")
-  .setColor("YELLOW")
-  .setDesciption("Thanks for inviting me, I hope you enjoy")
-  .addField("Use n-help to find all commands")
-  .addField("Join to support server to get update for Nordd bot"
-           
+  guild.systemChannel.send(`Hello, I'm Nordd bot. Thanks for inviting me, I hope you enjoy:)`)
 });
 
 const { prefix } = require("./config.json")
