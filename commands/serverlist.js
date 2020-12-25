@@ -10,7 +10,7 @@ module.exports = {
     usage: " ",
     accessableby: "Owner"
   },
-  run: async (bot, message, args) => {
+run: async(bot, message, args) => {
     if (message.author.id == ownerid) {
       if (!message.guild.me.hasPermission("ADMINISTRATOR"))
         return message.channel
@@ -35,7 +35,7 @@ module.exports = {
           message.author.tag,
           message.author.displayAvatarURL({ dynamic: true })
         )
-        .setColor("GREEN")
+        .setColor("PURPLE")
         .setFooter(bot.user.username)
         .setTitle(`Page - ${page}/${Math.ceil(bot.guilds.cache.size / 10)}`)
         .setDescription(description);
