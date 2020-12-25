@@ -26,7 +26,8 @@ client.on("ready", async () => {
 });
 
 client.on('guildCreate', guild => {
-  guild.systemChannel.send(`Hello, I'm Nordd bot. Thanks for inviting me, I hope you enjoy:)`)
+  guild.systemChannel.send(`Hello, I'm Nordd bot. Thanks for inviting me, I hope you enjoy:) `,
+                          ``)
 });
 
 const { prefix } = require("./config.json")
