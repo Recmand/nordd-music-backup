@@ -5,12 +5,9 @@ module.exports = {
   config: {
     name: "serverlist",
     aliases: ["slt"],
-    category: "owner",
     description: "Displays the list of servers the bot is in!",
-    usage: " ",
-    accessableby: "Owner"
   },
-run: async(bot, message, args) => {
+ run: async (client, message, args) => {
     if (message.author.id == ownerid) {
       if (!message.guild.me.hasPermission("ADMINISTRATOR"))
         return message.channel
@@ -22,8 +19,8 @@ run: async(bot, message, args) => {
       let page = 1;
 
       let description =
-        `Total Servers - ${bot.guilds.cache.size}\n\n` +
-        bot.guilds.cache
+        `Total Servers - ${client.guilds.cache.size}\n\n` +
+        client.guilds.cache
           .sort((a, b) => b.memberCount - a.memberCount)
           .map(r => r)
           .map((r, i) => `**${i + 1}** - ${r.name} | ${r.memberCount} Members\nID - ${r.id}`)
@@ -36,8 +33,8 @@ run: async(bot, message, args) => {
           message.author.displayAvatarURL({ dynamic: true })
         )
         .setColor("PURPLE")
-        .setFooter(bot.user.username)
-        .setTitle(`Page - ${page}/${Math.ceil(bot.guilds.cache.size / 10)}`)
+        .setFooter(client.user.username)
+        .setTitle(`Page - ${page}/${Math.ceil(client.guilds.cache.size / 10)}`)
         .setDescription(description);
 
       let msg = await message.channel.send(embed);
@@ -67,8 +64,8 @@ run: async(bot, message, args) => {
           }
 
           description =
-            `Total Servers - ${bot.guilds.cache.size}\n\n` +
-            bot.guilds.cache
+            `Total Servers - ${client.guilds.cache.size}\n\n` +
+            client.guilds.cache
               .sort((a, b) => b.memberCount - a.memberCount)
               .map(r => r)
               .map(
@@ -80,7 +77,7 @@ run: async(bot, message, args) => {
           // Update the embed with new informations
           embed
             .setTitle(
-              `Page - ${page}/${Math.round(bot.guilds.cache.size / 10 + 1)}`
+              `Page - ${page}/${Math.round(client.guilds.cache.size / 10 + 1)}`
             )
             .setDescription(description);
 
@@ -95,7 +92,7 @@ run: async(bot, message, args) => {
           page = page + 1;
 
           // if there is no guild to display, delete the message
-          if (i1 > bot.guilds.cache.size + 10) {
+          if (i1 > client.guilds.cache.size + 10) {
             return msg.delete();
           }
           if (!i0 || !i1) {
@@ -103,8 +100,8 @@ run: async(bot, message, args) => {
           }
 
           description =
-            `Total Servers - ${bot.guilds.cache.size}\n\n` +
-            bot.guilds.cache
+            `Total Servers - ${client.guilds.cache.size}\n\n` +
+            client.guilds.cache
               .sort((a, b) => b.memberCount - a.memberCount)
               .map(r => r)
               .map(
@@ -116,7 +113,7 @@ run: async(bot, message, args) => {
           // Update the embed with new informations
           embed
             .setTitle(
-              `Page - ${page}/${Math.round(bot.guilds.cache.size / 10 + 1)}`
+              `Page - ${page}/${Math.round(client.guilds.cache.size / 10 + 1)}`
             )
             .setDescription(description);
 
